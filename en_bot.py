@@ -41,7 +41,7 @@ TIMELEFT_ALERT2 = int(config['Settings']['Timeleft_alert2'])
 with open('yandex_api.txt', 'r', encoding='utf8') as yandex_api_file:
     YANDEX_API_PATTERN = yandex_api_file.read()
 
-executable_dir = os.path.dirname(sys.executable)
+executable_dir = os.path.dirname(os.path.realpath(sys.argv[0]))
 folder_path = os.path.join(executable_dir, 'level_snapshots')
 print(folder_path)
 if not os.path.exists(folder_path):
